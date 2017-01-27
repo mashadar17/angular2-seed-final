@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CourseService } from './course.service';
+
 @Component({
   selector: 'courses',
   template: `<h1>Courses</h1>
@@ -10,5 +12,9 @@ import { Component } from '@angular/core';
 
 export class CoursesComponent {
   title = "The title of the courses page";
-  courses = ["course 1", "course 2", "course 3"];
+  courses;
+
+  constructor(courseService: CourseService) {
+    this.courses = courseService.getCourses();
+  }
 }

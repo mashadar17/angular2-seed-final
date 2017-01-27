@@ -3,10 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 import { CoursesComponent } from './course/courses.component';
+import { CourseService } from './course/course.service';
+
 
 @NgModule({
     imports: [BrowserModule],
     declarations: [AppComponent, CoursesComponent],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [CourseService]
 })
 export class AppModule { }
